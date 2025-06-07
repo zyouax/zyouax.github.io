@@ -1,0 +1,120 @@
+/* === Repos container === */
+.repos-container {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* === Repo cards améliorées === */
+.repo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.2rem 1.8rem;
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+  border-radius: 16px;
+  border-left: 5px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.repo-card:hover {
+  transform: scale(1.015);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-left-color: #039be5;
+}
+
+[data-theme="dark"] .repo-card {
+  background: rgba(30, 41, 59, 0.85);
+  color: white;
+}
+
+.repo-content {
+  flex: 1;
+}
+
+.repo-card a {
+  color: #4fc3f7;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.repo-card p {
+  margin: 0.4rem 0;
+  line-height: 1.4;
+}
+
+.repo-actions {
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  text-align: right;
+}
+
+.use-button {
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: 500;
+}
+
+.use-button:hover {
+  background-color: #039be5;
+}
+
+.badge {
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .badge {
+  background-color: #004d40;
+  color: #b2dfdb;
+}
+
+/* === Filtres flottants === */
+.repo-filters {
+  position: sticky;
+  top: 80px;
+  background: var(--bg-color);
+  z-index: 10;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.repo-filters select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  color: black;
+}
+
+[data-theme="dark"] .repo-filters select {
+  background: #1f2937;
+  color: white;
+  border-color: #555;
+}

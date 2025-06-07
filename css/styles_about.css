@@ -1,0 +1,65 @@
+/* === About section moderne et concise === */
+.about-container {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(245,245,245,0.9));
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+  border-radius: 50%;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+[data-theme="dark"] .about-card {
+  background: linear-gradient(145deg, rgba(30,41,59,0.9), rgba(20,30,40,0.9));
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #4fc3f7, #81d4fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.about-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.about-card p strong {
+  color: #1976d2;
+}
+
+.about-card em {
+  font-style: italic;
+  color: #d88383;
+}

@@ -1,0 +1,194 @@
+/* === Variables de thème === */
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --header-bg: linear-gradient(to right, #111827, #1f2937);
+  --link-color: white;
+  --link-hover: #4fc3f7;
+  --aside-bg: #e3eaf1;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1f2937;
+  --text-color: #f0f2f5;
+  --header-bg: linear-gradient(to right, #0f172a, #1e293b);
+  --link-color: #f0f2f5;
+  --link-hover: #81d4fa;
+  --aside-bg: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+/* === Aside latérale === */
+aside {
+  width: 220px;
+  background-color: var(--aside-bg);
+  padding: 2rem 1rem;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+aside h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+aside a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+aside a:hover {
+  background-color: var(--link-hover);
+  color: white;
+}
+
+/* === Header === */
+header {
+  background: var(--header-bg);
+  color: var(--link-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #4fc3f7, #81d4fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+  position: relative;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  transition: all 0.3s ease;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--link-hover);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--link-hover);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+button, select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--link-color);
+  color: var(--link-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+button:hover, select:hover {
+  border-color: var(--link-hover);
+  color: var(--link-hover);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    box-shadow: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  aside a {
+    width: auto;
+  }
+
+  nav, .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a, button, select {
+    width: 100%;
+  }
+}
